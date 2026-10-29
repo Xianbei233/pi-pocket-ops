@@ -1,0 +1,246 @@
+/* Owner-only Ops configuration page. Uses the app's theme tokens and the classes Pi Pocket keeps for extensions. */
+
+.ops-config {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 16px;
+    color: var(--text);
+}
+
+.ops-config *,
+.ops-config *::before,
+.ops-config *::after {
+    box-sizing: border-box;
+}
+
+.ops-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.ops-head h2 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.ops-config h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ops-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.ops-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.ops-chip.ok {
+    color: var(--ok);
+    border-color: var(--ok);
+}
+
+.ops-chip.warn {
+    color: var(--warn);
+    border-color: var(--warn);
+}
+
+.ops-chip.err {
+    color: var(--err);
+    border-color: var(--err);
+}
+
+.ops-card {
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--card);
+}
+
+.ops-note {
+    margin: 6px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.ops-kv {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 6px 12px;
+    font-size: 13px;
+}
+
+.ops-kv > span:nth-child(odd) {
+    color: var(--muted);
+}
+
+.ops-kv .mono {
+    overflow-wrap: anywhere;
+}
+
+.ops-roots {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.ops-root {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ops-root input {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.ops-config input[type="text"],
+.ops-config select {
+    width: 100%;
+    min-height: 38px;
+    padding: 7px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+}
+
+.ops-config input[type="text"]:disabled,
+.ops-config select:disabled {
+    opacity: 0.55;
+}
+
+.ops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px 12px;
+    margin-top: 10px;
+}
+
+.ops-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.ops-field label {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.ops-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.ops-msg {
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.ops-msg.ok {
+    color: var(--ok);
+    border-color: var(--ok);
+}
+
+.ops-msg.warn {
+    color: var(--warn);
+    border-color: var(--warn);
+}
+
+.ops-msg.error {
+    color: var(--err);
+    border-color: var(--err);
+}
+
+@media (max-width: 600px) {
+    .ops-config {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .ops-card {
+        padding: 12px;
+    }
+
+    .ops-kv {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2px;
+    }
+
+    .ops-kv > span:nth-child(odd) {
+        margin-top: 6px;
+    }
+
+    .ops-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ops-actions .button {
+        flex: 1 1 auto;
+    }
+
+    .ops-root {
+        flex-wrap: wrap;
+    }
+
+    .ops-root input {
+        flex-basis: 100%;
+    }
+}
+
+.ops-confirm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border: 1px solid var(--warn);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.ops-confirm .ops-actions {
+    margin-top: 0;
+}
+
+.ops-root .button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
